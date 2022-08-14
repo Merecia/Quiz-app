@@ -1,0 +1,14 @@
+.WholeBar {
+    height: 20px;
+    width: 200px;
+    background-color: #E5E5E5;
+    border-radius: 50px;
+    margin-right: 20px;   
+}
+
+.CompletedPart {
+    height: 100%;
+    border-radius: 50px;
+    transition: width 1s ease-in-out;
+    background-color: #31CD63;
+}

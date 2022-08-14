@@ -1,0 +1,95 @@
+$light: #F4F3F6;
+$gradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+.Quiz {
+    background: $gradient;
+    height: 706px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.QuizForm {
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #E5E5E5;
+    transition: all 1s;
+}
+
+.Header {
+    display: flex;
+    margin-bottom: 60px;
+    padding-top: 5px;
+
+    .Title {
+        margin: 0 auto;
+        font-weight: 500;
+    }
+    
+    .CloseButton {
+        width: 40px;
+        height: 40px;
+        background-color: $light;
+        border-radius: 90px;
+        border:rgba(0, 0, 0, 0.25);
+
+        &:hover {
+            cursor: pointer;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .CloseIcon {
+            width: 15px;
+            height: 15px;
+        }
+        margin-right: 5px;
+    }
+    
+}
+
+.Footer {
+    border-radius: 0px 0px 20px 20px;
+    margin-top: 60px;
+    padding: 20px 0px;
+    background-color: $light;
+    display: flex;
+
+    .Center {
+        display: flex;
+        margin-left: 500px;
+        margin-right: 220px;
+
+        .LeftArrow, .RightArrow {
+            width: 60px;
+            height: 60px;
+        }
+
+        .LeftArrow:hover, .RightArrow:hover {
+            cursor: pointer;
+            filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.5));
+        }
+        
+        .Progress {
+            margin-left: 100px;
+            margin-right: 100px;
+            display: flex;
+            align-items: center;
+    
+            .Progressbar {
+                margin-right: 20px;
+            }
+    
+            .Counter {
+                font-size: 20px;
+                font-style: italic;
+            }
+            
+        }
+    }
+}
+
