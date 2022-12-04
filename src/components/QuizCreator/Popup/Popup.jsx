@@ -48,14 +48,22 @@ function Popup({ handleClose }) {
         let id
         let quizes = JSON.parse(localStorage.getItem('quizes'))
 
-        if (quizes.length !== 0) {
+        if (quizes) {
+
+            if (quizes.length !== 0) {
             
-            const lastId = quizes.map(quiz => quiz.id).sort().pop()
-            id = lastId + 1
+                const lastId = quizes.map(quiz => quiz.id).sort().pop()
+                id = lastId + 1
+            }
+
+            else {
+                quizes = []
+                id = 1
+            }
+
         }
         
         else {
-
             quizes = []
             id = 1
         }

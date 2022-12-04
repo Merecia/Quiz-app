@@ -64,8 +64,10 @@ function QuizCreator() {
 
     function addQuestionButtonClickHandler() {
 
-        if ( questionsList.find(question => question.id === currentQuestionId) ) 
+        if ( questionsList.find(question => question.id === currentQuestionId) )  {
             return
+        }
+            
 
         addQuestion({
             id: currentQuestionId,

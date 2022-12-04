@@ -11,13 +11,14 @@ $gradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
         box-shadow: 5px 5px 5px 5px rgba(0,0,0, .2);
         border-radius: 10px;
         margin: 25px 0px 30px 0px;
+        position: relative;
 
         .CloseIcon {
             content: 'x';
             cursor: pointer;
-            position: fixed;
-            right: calc(32% - 30px);
-            top: calc(100vh - 98vh);
+            position: absolute;
+            right: -2%;
+            top: -2%;
             background: #ededed;
             width: 25px;
             height: 25px;
