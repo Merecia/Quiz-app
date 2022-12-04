@@ -12,10 +12,13 @@ function Menu() {
     const { quizes, updateQuizes } = useMenu()
     const [search, setSearch] = useState('')
     const navigate = useNavigate()
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
 
         loadDataFromStorage()
+
+        setLoading(false)
 
     }, [])
 
@@ -60,9 +63,9 @@ function Menu() {
 
     const renderCards = quizes => {
 
-        if (quizes) return quizes.map(quiz => renderCard(quiz))
+        if (loading) return <div className={style.Center}> <Loader /> </div>
 
-        else return <div className={style.Center}> <Loader /> </div>
+        if (quizes) return quizes.map(quiz => renderCard(quiz))
 
     }
 
