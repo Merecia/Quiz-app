@@ -8,15 +8,13 @@ import { useQuiz } from './context/Quiz/QuizContext'
 
 function App() {
 
-    const {isFinished} = useQuiz()
-
     return (
         <main className={style.App}>
 
             <Routes>
 
                 <Route path = '/' element = {<Menu/>} />
-                <Route path = '/createQuiz' element = {<QuizCreator/>} />
+                <Route path = '/create-quiz' element = {<QuizCreator/>} />
                 <Route path = '/quiz/:id' element = {<QuizPage/>} />
 
             </Routes>

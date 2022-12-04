@@ -3,17 +3,20 @@ import style from './Menu.module.scss'
 import Button from '../Button/Button'
 import Card from './Card/Card'
 import Loader from '../Loader/Loader'
-import {useMenu} from '../../context/Menu/MenuContext' 
+import { useMenu } from '../../context/Menu/MenuContext'
+import { useNavigate } from "react-router-dom"
+
 
 function Menu() {
 
-    const {quizes, updateQuizes} = useMenu()
+    const { quizes, updateQuizes } = useMenu()
     const [search, setSearch] = useState('')
+    const navigate = useNavigate()
 
     useEffect(() => {
 
         loadDataFromStorage()
-        
+
     }, [])
 
     useEffect(() => {
@@ -29,12 +32,6 @@ function Menu() {
 
         const quizesData = JSON.parse(localStorage.getItem('quizes'))
 
-        console.log('ТЕСТЫ: ')
-        console.log(quizesData)
-
-        console.log('КОЛИЧЕСТВО ТЕСТОВ: ')
-        console.log(quizesData.length)
-
         if (quizesData) updateQuizes(quizesData)
     }
 
@@ -42,17 +39,7 @@ function Menu() {
 
         const isFinished = quiz.passingDate ? true : false
 
-        if (isFinished && quiz.questions.length === quiz.correctAnswers) return <Card
-            key={quiz.id}
-            id={quiz.id}
-            title={quiz.title}
-            amountQuestions={quiz.questions.length}
-            passingDate={quiz.passingDate}
-            correctAnswers={quiz.correctAnswers}
-            perfect
-        />
-
-        else if (isFinished && quiz.questions.length !== quiz.correctAnswers) return <Card
+        if (isFinished) return <Card
             key={quiz.id}
             id={quiz.id}
             title={quiz.title}
@@ -75,7 +62,7 @@ function Menu() {
 
         if (quizes) return quizes.map(quiz => renderCard(quiz))
 
-        else return <Loader />
+        else return <div className={style.Center}> <Loader /> </div>
 
     }
 
@@ -85,7 +72,7 @@ function Menu() {
 
         let filteredQuizes = quizesData
 
-        if (search.length !==0) filteredQuizes = quizesData.filter(quiz =>
+        if (search.length !== 0) filteredQuizes = quizesData.filter(quiz =>
             quiz.title.toLowerCase().startsWith(search.toLowerCase()))
 
         updateQuizes(filteredQuizes)
@@ -93,7 +80,7 @@ function Menu() {
 
     function searchInputKeyPressHandler(event) {
 
-        if (event.key === 'Enter') 
+        if (event.key === 'Enter')
             searching()
 
     }
@@ -111,22 +98,27 @@ function Menu() {
 
                 <div className={style.Search}>
 
+                    <button
+                        className={style.CircleButton}
+                        onClick={() => navigate(`/create-quiz`)}>
+                    </button>
+
                     <input
                         type="text"
-                        placeholder='Введите название теста'
+                        placeholder='Enter an quiz name'
                         className={style.Input}
                         value={search}
                         onChange={event => setSearch(event.target.value)}
-                        onKeyPress = {searchInputKeyPressHandler}
+                        onKeyPress={searchInputKeyPressHandler}
                     />
 
                     <Button
                         isActive={true}
                         color={'Blue'}
                         className={style.Button}
-                        onClick = {searching}
+                        onClick={searching}
                     >
-                        ПОИСК
+                        SEARCH
                     </Button>
 
                 </div>

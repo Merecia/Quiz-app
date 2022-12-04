@@ -2,7 +2,6 @@ import React, {useReducer} from 'react'
 import { LOAD_QUIZ, SET_CURRENT_QUESTION, FINISH_QUIZ, START_QUIZ } from '../types'
 import {QuizContext} from './QuizContext'
 import {QuizReducer} from './QuizReducer'
-import {data} from '../../data/quiz'
 
 function QuizState( {children} ) {
 

@@ -5,6 +5,7 @@ import Button from '../Button/Button'
 import Select from '../Select/Select'
 import Popup from './Popup/Popup'
 import { useCreator } from '../../context/Creator/CreatorContext'
+import { useNavigate } from 'react-router-dom'
 
 function QuizCreator() {
 
@@ -13,6 +14,8 @@ function QuizCreator() {
         validation, isValid, clearFields, questionsList, addQuestion} = useCreator()
 
     const [isModalOpen, setIsModalOpen] = useState(false)
+
+    const navigate = useNavigate()
 
     const togglePopup = () => {
 
@@ -91,16 +94,23 @@ function QuizCreator() {
 
             <div className={style.Form}>
 
+                <span 
+                    className={style.CloseIcon} 
+                    onClick={() => navigate('/')}
+                > 
+                    x 
+                </span>
+
                 <div className={style.Header}>
 
-                    <h2 className={style.Title}> Создание теста </h2>
+                    <h2 className={style.Title}> Creation of Quiz </h2>
 
                 </div>
 
                 <div className={style.Fields}>
 
                     <Input
-                        label='Введите вопрос'
+                        label='Enter question'
                         value={question}
                         onChange={event => questionInputChangeHandler(event.target.value)}
                     />
@@ -108,31 +118,31 @@ function QuizCreator() {
                     <hr className={style.Line} />
 
                     <Input
-                        label='Вариант А'
+                        label='Option А'
                         value={options.find(option => option.id === 1).answer}
                         onChange={event => optionInputChangeHandler(1, event.target.value)}
                     />
 
                     <Input
-                        label='Вариант B'
+                        label='Option B'
                         value={options.find(option => option.id === 2).answer}
                         onChange={event => optionInputChangeHandler(2, event.target.value)}
                     />
 
                     <Input
-                        label='Вариант C'
+                        label='Option C'
                         value={options.find(option => option.id === 3).answer}
                         onChange={event => optionInputChangeHandler(3, event.target.value)}
                     />
 
                     <Input
-                        label='Вариант D'
+                        label='Option D'
                         value={options.find(option => option.id === 4).answer}
                         onChange={event => optionInputChangeHandler(4, event.target.value)}
                     />
 
                     <Select
-                        label='Выберите правильный ответ'
+                        label='Select the correct answer'
                         value={translateIdToLetter(correctAnswerId)}
                         onChange={selectChangeHandler}
                         options={[
@@ -150,7 +160,7 @@ function QuizCreator() {
                             color={'Blue'}
                             onClick={addQuestionButtonClickHandler}
                         >
-                            Добавить вопрос
+                            Add Question
                         </Button>
 
                         <Button
@@ -158,7 +168,7 @@ function QuizCreator() {
                             color={'Purple'}
                             onClick={togglePopup}
                         >
-                            Создать тест
+                            Create Quiz
                         </Button>
 
                     </div>

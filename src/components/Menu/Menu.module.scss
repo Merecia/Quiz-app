@@ -3,7 +3,12 @@ $gradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 
 .Menu {
     padding-top: 20px;
-    // background: $gradient;
+}
+
+.Center {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
 }
 
 .Header {
@@ -30,7 +35,6 @@ $gradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 .Search {
     padding: 40px 0px;
     display: flex;
-    justify-content: center;
 
     .Input {
         padding: 20px;
@@ -57,4 +61,41 @@ $gradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 .Content > div {
     margin-bottom: 50px;
     margin-left: 50px;
+}
+
+.CircleButton {
+    margin-left: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: none;
+    transition: width .5s ease;
+    color: #000;
+    border: 2px solid #000;
+    position: relative;
+    margin-right: 5%;
+    
+    &:before {
+        content: "+";
+        font-size: 2.6em;
+        line-height: 37px;
+        position: absolute;
+        top: 2%;
+        left: 13%;
+    }
+
+    &:hover {
+        width: 240px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &:hover:after {
+        content: "Add Quiz";
+        font-size: 1.5em;
+        line-height: 37px;
+        position: absolute;
+        right: 60px;
+        top: 2px;
+    }
 }

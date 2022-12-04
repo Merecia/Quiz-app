@@ -80,7 +80,7 @@ function Popup({ handleClose }) {
                 <div className={style.Content}>
 
                     <Input
-                        label='Введите название для теста'
+                        label='Enter a name for the Quiz'
                         value = {title}
                         onChange = {event => setTitle(event.target.value)}
                     />
@@ -93,7 +93,7 @@ function Popup({ handleClose }) {
                             color={'Blue'}
                             onClick = {finishButtonClickHandler}
                         >
-                            Завершить
+                            Finish
                         </Button>
 
                     </div>

@@ -12,6 +12,22 @@ $gradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
         border-radius: 10px;
         margin: 25px 0px 30px 0px;
 
+        .CloseIcon {
+            content: 'x';
+            cursor: pointer;
+            position: fixed;
+            right: calc(32% - 30px);
+            top: calc(100vh - 98vh);
+            background: #ededed;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            line-height: 20px;
+            text-align: center;
+            border: 1px solid #999;
+            font-size: 20px;
+        }
+
         .Header {
             border-radius: 10px 10px 0px 0px;
             color: white;
