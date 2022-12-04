@@ -54,7 +54,7 @@ function Card({ title, id, amountQuestions, creationDate, passingDate, correctAn
 
                 <h1 className={style.Title}> {title} </h1>
 
-                <p className={style.NumberQuestions}> Количество вопросов: {amountQuestions} </p>
+                <p className={style.NumberQuestions}> Number of questions: {amountQuestions} </p>
 
             </div>
 
@@ -65,15 +65,15 @@ function Card({ title, id, amountQuestions, creationDate, passingDate, correctAn
                 {
                     isFinished 
                     ? <>
-                        <p> Вы уже проходили этот тест </p>
-                        <p> Дата прохождения теста: {passingDate} </p>
-                        <p> Количество набранных баллов: {correctAnswers}/{amountQuestions}
+                        <p> You have already taken this quiz </p>
+                        <p> Date the quiz was taken: {passingDate} </p>
+                        <p> Number of points earned: {correctAnswers}/{amountQuestions}
                         &nbsp;({percentCorrectAnswers}%) </p>
                     </>
 
                     : <>
-                        <p> Вы ещё не проходили этот тест </p>
-                        <p> Дата создания теста: {creationDate} </p>
+                        <p> You haven't taken this quiz yet </p>
+                        <p> Date of quiz creation: {creationDate} </p>
                     </>
                 }
 
@@ -85,7 +85,7 @@ function Card({ title, id, amountQuestions, creationDate, passingDate, correctAn
                 isActive={true} 
                 onClick = {startQuizButtonClickHandler}
             >
-                Пройти тест
+                Take the quiz
             </Button>
 
         </div>

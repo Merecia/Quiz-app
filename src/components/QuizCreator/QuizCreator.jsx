@@ -87,7 +87,11 @@ function QuizCreator() {
 
     }, [question, options])
 
-    console.log(questionsList)
+    useEffect(() => {
+
+        clearFields()
+        
+    }, [])
 
     return (
         <div className={style.QuizCreator}>

@@ -101,7 +101,7 @@ function Quiz({ id }) {
                         color={'Blue'}
                         className={style.FinishButton}
                     >
-                        Закончить тест
+                        Finish the test
                     </Button>
 
                 </div>

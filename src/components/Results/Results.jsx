@@ -74,11 +74,11 @@ function Results() {
 
                     <h2 className={style.Grade}>
 
-                        Оценка: {correctAnswers} из {amountQuestions} ({percentCorrectAnswers}%)
+                        Score: {correctAnswers} out of {amountQuestions} ({percentCorrectAnswers}%)
 
                     </h2>
 
-                    <h2 className={style.Title}> Результаты теста </h2>
+                    <h2 className={style.Title}> Quiz results </h2>
 
                     <button className={style.CloseButton} onClick={finish}>
 
@@ -101,7 +101,7 @@ function Results() {
                         isActive={true}
                         onClick={retry}
                     >
-                        Пройти ещё раз
+                        Retry
                     </Button>
 
                     <div className={style.Center}>
@@ -139,7 +139,7 @@ function Results() {
                         isActive={true}
                         onClick={finish}
                     >
-                        В главное меню
+                        To the main menu
                     </Button>
 
                 </div>

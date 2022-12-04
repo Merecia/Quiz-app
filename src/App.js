@@ -4,7 +4,6 @@ import {Route, Routes} from 'react-router-dom'
 import QuizPage from './pages/QuizPage/QuizPage'
 import Menu from './components/Menu/Menu'
 import QuizCreator from './components/QuizCreator/QuizCreator'
-import { useQuiz } from './context/Quiz/QuizContext'
 
 function App() {
 

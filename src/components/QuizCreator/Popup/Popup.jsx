@@ -7,7 +7,9 @@ import {useNavigate} from 'react-router-dom'
 
 function Popup({ handleClose }) {
 
-    const {questionsList, isValid, question, options, correctAnswerId, currentQuestionId} = useCreator()
+    const {questionsList, isValid, 
+        question, options, correctAnswerId, 
+        currentQuestionId, clearFields} = useCreator()
     const MINIMUM_TITLE_LENGTH = 4
     const [title, setTitle] = useState('')
     const navigate = useNavigate()
@@ -22,6 +24,8 @@ function Popup({ handleClose }) {
             options,
             correctAnswerId
         })
+
+        clearFields()
 
         addQuizToLocalStorage(questions)
 
