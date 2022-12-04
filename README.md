@@ -1,9 +1,13 @@
 The application has the following functionality:
 
 •	Quiz creation
+
 •	Passing quiz with automatic assessment
+
 •	Removing quiz
+
 •	Search for quiz
+
 •	Saving the date of passing and creating an quiz
 
 The app is in development. The plan is to make an adaptive layout to make the application equally displayed on all devices and fix some bugs. In addition, the plan is to make the possibility of editing quizes. When the work is completely finished, I will put it on public hosting
